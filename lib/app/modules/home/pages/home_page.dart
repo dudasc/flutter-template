@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_template/app/modules/home/pages/tab1_page.dart';
 import 'package:flutter_template/app/modules/home/pages/tab2_page.dart';
-import 'package:flutter_template/app/modules/home/pages/tab3_page.dart';
+import 'package:flutter_template/app/modules/home/pages/account_page.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 import '../store/home_store.dart';
 
@@ -21,7 +21,7 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
   static const List<Widget> _widgetOptions = <Widget>[
     Tab1Page(),
     Tab2Page(),
-    Tab3Page(),
+    AccountPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -33,16 +33,16 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home page'),
-        systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
-        centerTitle: true,
-        // leading: IconButton(
-        //     icon: const Icon(Icons.arrow_back_ios_rounded),
-        //     onPressed: () {
-        //       Navigator.pop(context, true);
-        //     }),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Home page'),
+      //   systemOverlayStyle: const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+      //   centerTitle: true,
+      //   // leading: IconButton(
+      //   //     icon: const Icon(Icons.arrow_back_ios_rounded),
+      //   //     onPressed: () {
+      //   //       Navigator.pop(context, true);
+      //   //     }),
+      // ),
       body: ScopedBuilder<HomeStore, Exception, int>(
         store: store,
         onState: (_, store) {
@@ -57,6 +57,7 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
           ),
         ),
       ),
+      
       bottomNavigationBar: BottomNavigationBar(
         elevation: 0,
         items: const <BottomNavigationBarItem>[
@@ -69,8 +70,8 @@ class _HomePageState extends ModularState<HomePage, HomeStore> {
             label: 'Business',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.person_outline_rounded),
+            label: 'Perfil',
           ),
         ],
         currentIndex: _selectedIndex,

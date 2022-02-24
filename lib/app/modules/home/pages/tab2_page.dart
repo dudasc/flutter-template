@@ -15,6 +15,21 @@ class Tab2PageState extends ModularState<Tab2Page, HomeStore> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+        elevation: .0,
+        shape: const Border(
+          bottom: BorderSide(color: Colors.orange, width: 2),
+        ),
+      ),
       body: ScopedBuilder<HomeStore, Exception, int>(
         store: store,
         onState: (_, counter) {
