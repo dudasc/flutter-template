@@ -46,7 +46,17 @@ class _SigninPageState extends State<SigninPage> {
               children: [
                 TextField(
                   onChanged: state.setUsername,
-                  decoration: InputDecoration(border: OutlineInputBorder(), labelText: 'Username', errorMaxLines: 3, errorStyle: TextStyle(color: Colors.red, fontSize: 12, fontWeight: FontWeight.bold)),
+                  decoration: InputDecoration(
+                    //border: OutlineInputBorder(),
+                    labelText: 'Username',
+                    suffixIcon:  Icon(Icons.person),
+                    errorMaxLines: 3,
+                    errorStyle: TextStyle(
+                      color: Colors.red,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 SizedBox(
                   height: 16,
@@ -54,8 +64,16 @@ class _SigninPageState extends State<SigninPage> {
                 TextFormField(
                   onChanged: state.setPassword,
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Password',
+                    //border: OutlineInputBorder(),
+                    labelText: 'Username',
+                    suffixIcon:  Icon(Icons.remove_red_eye),
+                    errorMaxLines: 3,
+                    errorStyle: TextStyle(
+                      color: Colors.red,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                   
                   ),
                 ),
                 SizedBox(
