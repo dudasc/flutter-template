@@ -1,5 +1,5 @@
 import 'package:flutter_template/app/modules/signin/pages/signin_Page.dart';
-import 'package:flutter_template/app/modules/signin/signin_store.dart';
+import 'package:flutter_template/app/modules/signin/store/signin_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class SigninModule extends Module {

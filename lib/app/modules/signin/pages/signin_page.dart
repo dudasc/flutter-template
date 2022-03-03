@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_template/app/modules/signin/signin_store.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_template/app/modules/signin/store/signin_store.dart';
 import 'package:flutter_template/app/modules/signin/view_model/login_view_model.dart';
 import 'package:flutter_triple/flutter_triple.dart';
 
@@ -21,7 +21,6 @@ class _SigninPageState extends State<SigninPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: ScopedBuilder<SigninStore, Exception, LoginViewModel>(
         store: store,
         onState: (_, state) => Padding(
@@ -45,7 +44,8 @@ class _SigninPageState extends State<SigninPage> {
             Column(
               children: [
                 TextField(
-                  onChanged: state.setUsername,
+                  // onChanged: state.setUsername,
+                  onChanged: (value) => setState(() => state.username = value),
                   decoration: InputDecoration(
                     //border: OutlineInputBorder(),
                     labelText: 'Username',
@@ -62,7 +62,8 @@ class _SigninPageState extends State<SigninPage> {
                   height: 16,
                 ),
                 TextFormField(
-                  onChanged: state.setPassword,
+                  // onChanged: state.setPassword,
+                  onChanged: (value) => setState(() => state.password = value),
                   decoration: InputDecoration(
                     //border: OutlineInputBorder(),
                     labelText: 'Username',

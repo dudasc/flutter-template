@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_template/app/modules/home/store/home_store.dart';
 
 class Tab1Page extends StatefulWidget {
   final String title;
@@ -7,27 +9,22 @@ class Tab1Page extends StatefulWidget {
   Tab1PageState createState() => Tab1PageState();
 }
 
-class Tab1PageState extends State<Tab1Page> {
+class Tab1PageState extends ModularState<Tab1Page, HomeStore> {
   final List<String> entries = <String>['A', 'B', 'C'];
   final List<int> colorCodes = <int>[600, 500, 100];
+
+  List<String> data = [];
+
+  @override
+  initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          widget.title,
-          style: const TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.transparent,
-        centerTitle: true,
-        elevation: .0,
-        shape: const Border(
-          bottom: BorderSide(color: Colors.orange, width: 2),
-        ),
+        title: Text(widget.title),
       ),
       body: entries.isNotEmpty
           ? ListView.separated(

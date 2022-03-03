@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_template/app/modules/signin/signin_store.dart';
+import 'package:flutter_template/app/modules/signin/store/signin_store.dart';
  
 void main() {
   late SigninStore store;

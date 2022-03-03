@@ -6,7 +6,7 @@ class SigninStore extends NotifierStore<Exception, LoginViewModel> {
   SigninStore() : super(LoginViewModel());
 
   login(BuildContext context) {
-    if (state.getUsername != 'admin' || state.getPassword != 'admin') {
+    if (state.username!= 'admin' || state.password != 'admin') {
       final snackBar = SnackBar(
         backgroundColor: Colors.red.shade400,
         content: const Text('Username or password incorrect.'),
