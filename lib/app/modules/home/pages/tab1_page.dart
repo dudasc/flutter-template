@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_template/app/modules/home/components/swiper_component.dart';
 import 'package:flutter_template/app/modules/home/store/home_store.dart';
+
+import 'package:flutter_swiper/flutter_swiper.dart';
 
 class Tab1Page extends StatefulWidget {
   final String title;
@@ -25,23 +28,15 @@ class Tab1PageState extends ModularState<Tab1Page, HomeStore> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        automaticallyImplyLeading: false,
       ),
-      body: entries.isNotEmpty
-          ? ListView.separated(
-              padding: const EdgeInsets.all(8),
-              itemCount: entries.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  height: 50,
-                  color: Colors.blue[colorCodes[index]],
-                  child: Center(child: Text('Entry ${entries[index]}')),
-                );
-              },
-              separatorBuilder: (BuildContext context, int index) => const Divider(),
-            )
-          : const Center(
-              child: Text('No items'),
-            ),
+      body: const Padding(
+        padding: EdgeInsets.all(8),
+        child: SizedBox(
+          height: 160,
+          child: SwiperComponent()
+        ),
+      ),
     );
   }
 }

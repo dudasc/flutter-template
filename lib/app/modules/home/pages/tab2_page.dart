@@ -17,6 +17,7 @@ class Tab2PageState extends ModularState<Tab2Page, HomeStore> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        automaticallyImplyLeading: false,
       ),
       body: ScopedBuilder<HomeStore, Exception, int>(
         store: store,

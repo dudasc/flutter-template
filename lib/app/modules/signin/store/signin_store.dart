@@ -43,7 +43,7 @@ class SigninStore extends NotifierStore<Exception, LoginViewModel> {
       },
     );
 
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 1), () {
       Navigator.pop(context); //pop dialog
       Navigator.pushNamed(context, '/home');
     });

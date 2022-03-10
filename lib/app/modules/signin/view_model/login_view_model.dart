@@ -1,6 +1,6 @@
 class LoginViewModel {
-  String username = '';
-  String password = '';
+  String username = 'admin';
+  String password = 'admin';
 
   // void setUsername(dynamic value) {
   //   username = value;

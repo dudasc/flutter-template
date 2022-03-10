@@ -43,11 +43,11 @@ class _SigninPageState extends State<SigninPage> {
             ),
             Column(
               children: [
-                TextField(
+                TextFormField(
                   // onChanged: state.setUsername,
                   onChanged: (value) => setState(() => state.username = value),
+                  initialValue: 'admin',
                   decoration: InputDecoration(
-                    //border: OutlineInputBorder(),
                     labelText: 'Username',
                     suffixIcon:  Icon(Icons.person),
                     errorMaxLines: 3,
@@ -64,8 +64,8 @@ class _SigninPageState extends State<SigninPage> {
                 TextFormField(
                   // onChanged: state.setPassword,
                   onChanged: (value) => setState(() => state.password = value),
+                  initialValue: 'admin',
                   decoration: InputDecoration(
-                    //border: OutlineInputBorder(),
                     labelText: 'Username',
                     suffixIcon:  Icon(Icons.remove_red_eye),
                     errorMaxLines: 3,
@@ -73,8 +73,7 @@ class _SigninPageState extends State<SigninPage> {
                       color: Colors.red,
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
-                    ),
-                   
+                    ),                   
                   ),
                 ),
                 SizedBox(
