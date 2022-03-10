@@ -3,8 +3,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_template/app/modules/home/components/swiper_component.dart';
 import 'package:flutter_template/app/modules/home/store/home_store.dart';
 
-import 'package:flutter_swiper/flutter_swiper.dart';
-
 class Tab1Page extends StatefulWidget {
   final String title;
   const Tab1Page({Key? key, this.title = 'Tab1Page'}) : super(key: key);

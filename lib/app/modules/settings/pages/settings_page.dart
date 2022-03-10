@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_template/app/modules/settings/components/bottom_sheet_component.dart';
 import 'package:flutter_template/app/modules/settings/store/settings_store.dart';
 import 'package:flutter_template/app/modules/settings/view_model/settings_view_model.dart';
 import 'package:flutter_template/app/modules/shared/theme/theme_model.dart';
@@ -28,7 +29,6 @@ class _SettingsPageState extends ModularState<SettingsPage, SettingsStore> {
               onPressed: () => Navigator.of(context).pop(),
             ),
             elevation: .0,
-            
           ),
           body: ScopedBuilder<SettingsStore, Exception, SettingsViewModel>(
             store: store,
@@ -47,25 +47,30 @@ class _SettingsPageState extends ModularState<SettingsPage, SettingsStore> {
                                 icon: Icon(themeNotifier.isDark ? Icons.nightlight_round : Icons.wb_sunny),
                                 onPressed: () {
                                   themeNotifier.isDark ? themeNotifier.isDark = false : themeNotifier.isDark = true;
-                                })
-
-                            
-                            ),
+                                })),
                         ListTile(
                           title: const Text('Other setting'),
                           onTap: () => false,
-                          trailing: 
-                          Switch(
-                                value: state.otherConfig,
-                                onChanged: (value) {
-                                  setState(() {
-                                    state.otherConfig = value;
-                                  });
-                                }),
+                          trailing: Switch(
+                              value: state.otherConfig,
+                              onChanged: (value) {
+                                setState(() {
+                                  state.otherConfig = value;
+                                });
+                              }),
+                        ),
+                        ListTile(
+                          title: const Text('Show modal bottom sheet'),
+                          onTap: () => {
+                            showModalBottomSheet<void>(
+                              context: context,
+                              builder: (BuildContext context) => const BottomSheetComponent(),
+                            ),
+                          },
                         ),
                       ]).toList(),
                     ),
-                  ),
+                  )
                 ],
               );
             },
